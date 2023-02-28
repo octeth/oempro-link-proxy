@@ -22,3 +22,6 @@ destroy:
 	-@docker stop oempro-link-proxy
 	-@docker image rm oempro-link-proxy
 	-@docker container rm oempro-link-proxy
+
+restart:
+	-@docker restart oempro-link-proxy
