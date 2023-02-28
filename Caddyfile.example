@@ -1,0 +1,43 @@
+# Reference:
+# https://ohdear.app/blog/how-we-used-caddy-and-laravels-subdomain-routing-to-serve-our-status-pages
+
+# In the Octeth administrator area, go to Settings > Email Delivery section
+# and find "On-Demand SSL Domain URL" setting. Copy the given URL and paste
+# it below. Uncomment the entire configuration block.
+
+# IMPORTANT: Uncommenting the https configuration block without "on_demand_tls"
+# configuration will cause your link proxy server to initiate SSL certificates
+# for any domains pointed to your server!
+
+#{
+#  on_demand_tls {
+#		ask https://oempro-domain.com/app/domain_verify/run/xxxxxxxxxx
+#  }
+#}
+
+http:// {
+    redir https://{host}{uri}
+}
+
+#https:// {
+#  tls support@octeth.com {
+#    on_demand
+#  }
+#
+#  # https://caddyserver.com/docs/caddyfile/directives/reverse_proxy
+#  reverse_proxy {
+#    to https://oempro-domain.com
+#
+#    header_down X-Test2 {system.hostname}
+#
+#    header_up Host {upstream_hostport}
+#    header_up X-Forwarded-Host {host}
+#    header_up X-Test1 {system.hostname}
+#    header_up Host {host}.oempro-domain.com
+#    header_up StatusPageHost {host}
+#    header_up X-Real-IP {remote}
+#    header_up X-Forwarded-For {remote}
+#    header_up X-Forwarded-Port {server_port}
+#    header_up X-Forwarded-Proto {scheme}
+#  }
+#}
