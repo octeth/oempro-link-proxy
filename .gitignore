@@ -1,4 +1,4 @@
 .idea
 .env
-caddy-data
+docker-data/*
 Caddyfile
