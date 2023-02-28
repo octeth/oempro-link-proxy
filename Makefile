@@ -5,8 +5,8 @@ run:
 	-@docker rm oempro-link-proxy
 
 	@docker run -d -it --rm \
-	-p 8111:80 \
-	-p 4431:443 \
+	-p 80:80 \
+	-p 443:443 \
 	-v ${PWD}/Caddyfile:/etc/caddy/Caddyfile \
 	-v ${PWD}/docker-data:/data \
 	-h oempro-link-proxy \
