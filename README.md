@@ -1,4 +1,4 @@
-# Oempro MX Server
+# Oempro Link Proxy
 
 This module will let you to run a link tracker proxy in front your Octeth server. It's powered by [Caddy server](https://caddyserver.com/).
 
