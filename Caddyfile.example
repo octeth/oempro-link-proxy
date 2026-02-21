@@ -30,6 +30,7 @@ http:// {
 #
 #    header_down X-Test2 {system.hostname}
 #
+#    header_up X-Caddy-Proxy 1
 #    header_up Host {upstream_hostport}
 #    header_up X-Forwarded-Host {host}
 #    header_up X-Test1 {system.hostname}
