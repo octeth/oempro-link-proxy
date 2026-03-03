@@ -1,0 +1,17 @@
+services:
+  caddy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./docker-data:/data
+    hostname: oempro-link-proxy
+    restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: 524288
+        hard: 524288

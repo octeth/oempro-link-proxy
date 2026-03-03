@@ -10,6 +10,7 @@ run:
 	-v ${PWD}/Caddyfile:/etc/caddy/Caddyfile \
 	-v ${PWD}/docker-data:/data \
 	-h oempro-link-proxy \
+	--ulimit nofile=524288:524288 \
 	--name oempro-link-proxy oempro-link-proxy
 
 stop:
